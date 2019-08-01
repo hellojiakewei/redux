@@ -3,7 +3,7 @@ import 'antd/dist/antd.css'
 import {Input, Button, List} from 'antd'
 import store from './store/index'
 import {getInputValue, addInputValue, deleteItem} from './store/actionCreate'
-import axios from 'axios'
+
 
 class TodoList extends Component {
     constructor(props) {
@@ -52,19 +52,7 @@ class TodoList extends Component {
         store.dispatch(action)
     }
 
-    componentDidMount() {
-        // axios.post('/user/login').then((res)=>{
-        //   console.log(res.data.data)
-        // })
-        const instance = axios.create({
-            baseURL: 'http://192.168.29.80:4000/',
-            timeout: 1000,
-            headers: {'X-Custom-Header': 'foobar'}
-        });
-        instance.post('/user/login').then((res) => {
-            console.log(res.data.data)
-        })
-    }
+    
 }
 
 export default TodoList
